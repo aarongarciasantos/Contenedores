@@ -10,4 +10,6 @@ COPY . .
 
 EXPOSE 5000
 
+ENV FLASK_DEBUG=0
+
 CMD ["python", "app.py"]
