@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block titulo %}{{ titulo }}{% endblock %}
+{% block contenido %}
+
+<h2>{{ titulo }}</h2>
+
+<form method="POST" class="formulario">
+
+    <div class="campo">
+        <label>Nombre del personaje</label>
+        <input type="text" name="nombre" value="{{ personaje.get('nombre', '') }}" required>
+    </div>
+
+    <div class="campo">
+        <label>Anime</label>
+        <input type="text" name="anime" value="{{ personaje.get('anime', '') }}" required>
+    </div>
+
+    <div class="campo">
+        <label>Descripción</label>
+        <textarea name="descripcion" required>{{ personaje.get('descripcion', '') }}</textarea>
+    </div>
+
+    <div class="campo">
+        <label>Habilidades</label>
+        <textarea name="habilidades" required>{{ personaje.get('habilidades', '') }}</textarea>
+    </div>
+    
+    <div class="botones-formulario">
+        <button type="submit" class="boton">Guardar</button>
+        <a class="boton" href="{{ url_for('lista_personajes') }}">
+            Volver
+        </a>
+    </div>
+</form>
+{% endblock %}

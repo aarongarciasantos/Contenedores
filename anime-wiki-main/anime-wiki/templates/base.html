@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Wiki Anime{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Wiki Anime</h1>
+
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/personajes">Mis personajes</a>
+            <a href="/personajes/nuevo">Añadir personaje</a>
+        </nav>
+
+        <form action="/buscar" method="GET">
+            <input type="text" name="q" placeholder="Buscar personaje">
+            <button type="submit">Buscar</button>
+        </form>
+
+    </header>
+
+    <main>
+
+        {% block contenido %}
+        {% endblock %}
+
+    </main>
+
+</body>
+</html>

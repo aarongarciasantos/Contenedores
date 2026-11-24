@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block titulo %}Mi colección{% endblock %}
+{% block contenido %}
+<h2>Mi colección</h2>
+{% if personajes %}
+    <div class="lista">
+    {% for personaje in personajes %}
+        <article class="tarjeta">
+            <h3>{{ personaje.nombre }}</h3>
+            <p><b>Anime:</b> {{ personaje.anime }}</p>
+            <p>{{ personaje.descripcion }}</p>
+            <a href="{{ url_for('detalle_personaje', personaje_id=personaje.id) }}">Ver ficha</a> |
+            <a href="{{ url_for('editar_personaje', personaje_id=personaje.id) }}">Editar</a>
+        </article>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>Todavía no has añadido personajes.</p>
+{% endif %}
+{% endblock %}

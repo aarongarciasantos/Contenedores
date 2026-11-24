@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block titulo %}Buscar personajes{% endblock %}
+
+{% block contenido %}
+
+<h2>Buscar personajes</h2>
+
+<form action="/buscar" method="GET">
+    <input type="text" name="q" placeholder="Escribe un personaje">
+    <button type="submit">Buscar</button>
+</form>
+
+<h3>Resultados:</h3>
+
+{% if resultados %}
+
+    {% for personaje in resultados %}
+
+        <div class="tarjeta">
+            <h3>{{ personaje.nombre }}</h3>
+
+            <p>Anime: {{ personaje.anime }}</p>
+
+            <p>{{ personaje.descripcion }}</p>
+
+            <p>Habilidades: {{ personaje.habilidades }}</p>
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No se han encontrado personajes.</p>
+
+{% endif %}
+
+{% endblock %}

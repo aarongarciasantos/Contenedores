@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %}
+
+<h1>Wiki Anime</h1>
+
+<p>Bienvenido</p>
+
+<h2>Personajes de Studio Trigger</h2>
+
+<div class="lista">
+    {% for personaje in trigger %}
+
+        <div class="tarjeta">
+
+            <h3>{{ personaje.nombre }}</h3>
+
+            <p>Anime: {{ personaje.anime }}</p>
+
+            <p>{{ personaje.descripcion }}</p>
+
+            <p>Habilidades: {{ personaje.habilidades }}</p>
+
+            <form method="POST" action="{{ url_for('anadir_catalogo', grupo='trigger', slug=personaje.slug) }}">
+                <button type="submit">Añadir personaje</button>
+            </form>
+
+        </div>
+
+    {% endfor %}
+</div>
+
+<h2>Personajes de Dai-Gurren</h2>
+
+<div class="lista">
+    {% for personaje in dai_gurren %}
+
+        <div class="tarjeta">
+
+            <h3>{{ personaje.nombre }}</h3>
+
+            <p>Anime: {{ personaje.anime }}</p>
+
+            <p>{{ personaje.descripcion }}</p>
+
+            <p>Habilidades: {{ personaje.habilidades }}</p>
+
+            <form method="POST" action="{{ url_for('anadir_catalogo', grupo='dai-gurren', slug=personaje.slug) }}">
+                <button type="submit">Añadir personaje</button>
+            </form>
+
+        </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

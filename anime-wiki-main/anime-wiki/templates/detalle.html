@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block titulo %}{{ personaje.nombre }}{% endblock %}
+{% block contenido %}
+
+<h2>{{ personaje.nombre }}</h2>
+
+<p><b>Anime:</b> {{ personaje.anime }}</p>
+<p><b>Descripción:</b> {{ personaje.descripcion }}</p>
+<p><b>Habilidades:</b> {{ personaje.habilidades }}</p>
+
+<div class="botones-ficha">
+    <a class="boton" href="{{ url_for('editar_personaje', personaje_id=personaje.id) }}">
+        Editar
+    </a>
+    <form method="POST" action="{{ url_for('eliminar_personaje', personaje_id=personaje.id) }}">
+        <button type="submit" class="boton boton-eliminar">Eliminar</button>
+    </form>
+    <a class="boton" href="{{ url_for('lista_personajes') }}">
+        Volver a mi colección
+    </a>
+</div>
+{% endblock %}

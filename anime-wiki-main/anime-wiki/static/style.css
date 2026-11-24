@@ -1,0 +1,222 @@
+body {
+    background-image: url("/static/trigger.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 15px 0;
+    color: white;
+}
+
+nav {
+    margin-bottom: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 17px;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+form {
+    margin: 10px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #e65c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff8533;
+}
+
+main {
+    width: 90%;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    min-height: 400px;
+}
+
+h1, h2, h3 {
+    color: white;
+}
+
+h2 {
+    border-bottom: 2px solid #e65c00;
+    padding-bottom: 10px;
+}
+
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tarjeta {
+    width: 250px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(35, 35, 35, 0.95);
+    border: 2px solid #e65c00;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.tarjeta h3 {
+    color: #ff8533;
+}
+
+.tarjeta p {
+    color: white;
+    line-height: 1.5;
+}
+
+a {
+    color: #ff8533;
+}
+
+a:hover {
+    color: orange;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #e65c00;
+    color: white;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.formulario .campo {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.formulario label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.formulario input,
+.formulario textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.botones-ficha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.botones-ficha form {
+    margin: 0;
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e65c00;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.boton:hover {
+    background-color: #ff8533;
+    color: white;
+}
+
+.boton-eliminar {
+    background-color: #a32222;
+}
+
+.boton-eliminar:hover {
+    background-color: #d32f2f;
+}
+
+.botones-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.botones-formulario .boton {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .lista {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 100%;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+}
